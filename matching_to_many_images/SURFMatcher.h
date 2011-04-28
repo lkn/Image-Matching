@@ -40,7 +40,7 @@ public:
 		const CvSeq* objectDescriptors, const CvSeq* imageKeypoints,
 		const CvSeq* imageDescriptors, vector<int>& ptpairs) const;
 
-	double MatchAgainstLibrary(const char *queryImageName, 
+	string MatchAgainstLibrary(const char *queryImageName, 
 		const IplImage *queryImage, const CvSeq *queryKeyPoints, const CvSeq *queryDescriptors) const;
 
 	int NaiveNearestNeighbor(const float* vec,

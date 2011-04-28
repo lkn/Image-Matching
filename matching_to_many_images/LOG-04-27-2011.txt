@@ -114,3 +114,450 @@
 
 [08:42:17] Visualization Time for data/boston_closeup.jpg = 6.49329e+009m
 
+
+
+-------------------------------------------
+[10:05:56] Building SURF reference library with data/library/index.xml...
+
+[10:06:28] Build Time for 6 Images = 3.16176e+010m
+
+
+
+-------------------------------------------
+[10:09:13] Building SURF reference library with data/library/index.xml...
+
+[10:09:45] Build Time for 6 Images = 3.12381e+010m
+
+
+
+-------------------------------------------
+[10:10:58] Building SURF reference library with data/library/index.xml...
+
+[10:11:33] Build Time for 6 Images = 3.47518e+010m
+
+
+
+-------------------------------------------
+[10:13:44] Building SURF reference library with data/library/index.xml...
+
+
+
+-------------------------------------------
+[10:14:49] Building SURF reference library with data/library/index.xml...
+
+[10:15:23] Build Time for 6 Images = 3.36452e+010m
+
+
+
+-------------------------------------------
+[10:15:59] Building SURF reference library with data/library/index.xml...
+
+[10:16:26] Build Time for 6 Images = 2.72976e+010m
+
+[10:16:44] Using SURF to match 04-27-11-22-16-43.jpg to image library
+
+[10:16:44] 	04-27-11-22-16-43.jpg matched 15.56% with Boston
+
+[10:16:45] 	04-27-11-22-16-43.jpg matched 1.17% with Bunker Hill Memorial
+
+[10:16:45] 	04-27-11-22-16-43.jpg matched 0.58% with Freedom Trail
+
+[10:16:46] 	04-27-11-22-16-43.jpg matched 0.39% with Harvard
+
+[10:16:46] 	04-27-11-22-16-43.jpg matched 1.95% with Hawaii
+
+[10:16:46] 	04-27-11-22-16-43.jpg matched 0.97% with Holocaust Memorial
+
+[10:16:46] Match Time for 04-27-11-22-16-43.jpg = 2.743e+009m
+
+[10:16:47] 04-27-11-22-16-43.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[10:27:47] Building SURF reference library with data/library/index.xml...
+
+[10:28:18] Build Time for 6 Images = 3.09573e+010m
+
+[10:28:24] New client (-1) doing work!
+
+[10:28:52] Using SURF to match 04-27-11-22-28-50.jpg to image library
+
+[10:28:52] 	04-27-11-22-28-50.jpg matched 15.56% with Boston
+
+[10:28:53] 	04-27-11-22-28-50.jpg matched 1.17% with Bunker Hill Memorial
+
+[10:28:53] 	04-27-11-22-28-50.jpg matched 0.58% with Freedom Trail
+
+[10:28:54] 	04-27-11-22-28-50.jpg matched 0.39% with Harvard
+
+[10:28:55] 	04-27-11-22-28-50.jpg matched 1.95% with Hawaii
+
+[10:28:55] 	04-27-11-22-28-50.jpg matched 0.97% with Holocaust Memorial
+
+[10:28:55] Match Time for 04-27-11-22-28-50.jpg = 3.45972e+009m
+
+[10:28:55] 04-27-11-22-28-50.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[10:32:36] Building SURF reference library with data/library/index.xml...
+
+[10:33:12] Build Time for 6 Images = 3.60104e+010m
+
+[10:33:21] New client (-1) doing work!
+
+[10:33:39] Using SURF to match 04-27-11-22-33-37.jpg to image library
+
+[10:33:40] 	04-27-11-22-33-37.jpg matched 15.56% with Boston
+
+[10:33:40] 	04-27-11-22-33-37.jpg matched 1.17% with Bunker Hill Memorial
+
+[10:33:40] 	04-27-11-22-33-37.jpg matched 0.58% with Freedom Trail
+
+[10:33:41] 	04-27-11-22-33-37.jpg matched 0.39% with Harvard
+
+[10:33:41] 	04-27-11-22-33-37.jpg matched 1.95% with Hawaii
+
+[10:33:42] 	04-27-11-22-33-37.jpg matched 0.97% with Holocaust Memorial
+
+[10:33:42] Match Time for 04-27-11-22-33-37.jpg = 3.02388e+009m
+
+[10:33:42] 04-27-11-22-33-37.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[10:35:32] Building SURF reference library with data/library/index.xml...
+
+[10:36:01] Build Time for 6 Images = 2.9019e+010m
+
+[10:36:05] New client (-1) doing work!
+
+[10:36:12] Using SURF to match 04-27-11-22-36-11.jpg to image library
+
+[10:36:13] 	04-27-11-22-36-11.jpg matched 15.56% with Boston
+
+[10:36:13] 	04-27-11-22-36-11.jpg matched 1.17% with Bunker Hill Memorial
+
+[10:36:14] 	04-27-11-22-36-11.jpg matched 0.58% with Freedom Trail
+
+[10:36:14] 	04-27-11-22-36-11.jpg matched 0.39% with Harvard
+
+[10:36:14] 	04-27-11-22-36-11.jpg matched 1.95% with Hawaii
+
+[10:36:15] 	04-27-11-22-36-11.jpg matched 0.97% with Holocaust Memorial
+
+[10:36:15] Match Time for 04-27-11-22-36-11.jpg = 2.68686e+009m
+
+[10:36:15] 04-27-11-22-36-11.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[10:37:15] Building SURF reference library with data/library/index.xml...
+
+[10:37:45] Build Time for 6 Images = 2.97953e+010m
+
+[10:37:53] New client (-1) doing work!
+
+[10:38:06] Using SURF to match 04-27-11-22-38-04.jpg to image library
+
+[10:38:06] 	04-27-11-22-38-04.jpg matched 15.56% with Boston
+
+[10:38:07] 	04-27-11-22-38-04.jpg matched 1.17% with Bunker Hill Memorial
+
+[10:38:07] 	04-27-11-22-38-04.jpg matched 0.58% with Freedom Trail
+
+[10:38:08] 	04-27-11-22-38-04.jpg matched 0.39% with Harvard
+
+[10:38:08] 	04-27-11-22-38-04.jpg matched 1.95% with Hawaii
+
+[10:38:08] 	04-27-11-22-38-04.jpg matched 0.97% with Holocaust Memorial
+
+[10:38:08] Match Time for 04-27-11-22-38-04.jpg = 2.61809e+009m
+
+[10:38:08] 04-27-11-22-38-04.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[10:40:38] Building SURF reference library with data/library/index.xml...
+
+[10:41:11] Build Time for 6 Images = 3.31771e+010m
+
+[10:41:34] New client (-1) doing work!
+
+[10:42:01] Using SURF to match 04-27-11-22-41-59.jpg to image library
+
+[10:42:02] 	04-27-11-22-41-59.jpg matched 15.56% with Boston
+
+[10:42:02] 	04-27-11-22-41-59.jpg matched 1.17% with Bunker Hill Memorial
+
+[10:42:02] 	04-27-11-22-41-59.jpg matched 0.58% with Freedom Trail
+
+[10:42:03] 	04-27-11-22-41-59.jpg matched 0.39% with Harvard
+
+[10:42:03] 	04-27-11-22-41-59.jpg matched 1.95% with Hawaii
+
+[10:42:04] 	04-27-11-22-41-59.jpg matched 0.97% with Holocaust Memorial
+
+[10:42:04] Match Time for 04-27-11-22-41-59.jpg = 3.17056e+009m
+
+[10:42:04] 04-27-11-22-41-59.jpg was best matched with Boston
+
+[10:48:05] Using SURF to match 04-27-11-22-48-03.jpg to image library
+
+[10:48:05] 	04-27-11-22-48-03.jpg matched 15.56% with Boston
+
+[10:48:06] 	04-27-11-22-48-03.jpg matched 1.17% with Bunker Hill Memorial
+
+[10:48:06] 	04-27-11-22-48-03.jpg matched 0.58% with Freedom Trail
+
+[10:48:07] 	04-27-11-22-48-03.jpg matched 0.39% with Harvard
+
+[10:48:07] 	04-27-11-22-48-03.jpg matched 1.95% with Hawaii
+
+[10:48:07] 	04-27-11-22-48-03.jpg matched 0.97% with Holocaust Memorial
+
+[10:48:07] Match Time for 04-27-11-22-48-03.jpg = 2.73189e+009m
+
+[10:48:07] 04-27-11-22-48-03.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[10:49:41] Building SURF reference library with data/library/index.xml...
+
+[10:50:19] Build Time for 6 Images = 3.81011e+010m
+
+[10:50:48] New client (-1) doing work!
+
+[10:50:54] Using SURF to match 04-27-11-22-50-52.jpg to image library
+
+[10:50:55] 	04-27-11-22-50-52.jpg matched 15.56% with Boston
+
+[10:50:56] 	04-27-11-22-50-52.jpg matched 1.17% with Bunker Hill Memorial
+
+[10:50:57] 	04-27-11-22-50-52.jpg matched 0.58% with Freedom Trail
+
+[10:50:58] 	04-27-11-22-50-52.jpg matched 0.39% with Harvard
+
+[10:50:58] 	04-27-11-22-50-52.jpg matched 1.95% with Hawaii
+
+[10:50:59] 	04-27-11-22-50-52.jpg matched 0.97% with Holocaust Memorial
+
+[10:50:59] Match Time for 04-27-11-22-50-52.jpg = 5.43713e+009m
+
+[10:50:59] 04-27-11-22-50-52.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[11:03:03] Building SURF reference library with data/library/index.xml...
+
+[11:03:39] Build Time for 6 Images = 3.56846e+010m
+
+[11:03:51] New client (-1) doing work!
+
+[11:03:58] Using SURF to match 04-27-11-23-03-57.jpg to image library
+
+[11:03:59] 	04-27-11-23-03-57.jpg matched 15.56% with Boston
+
+[11:04:00] 	04-27-11-23-03-57.jpg matched 1.17% with Bunker Hill Memorial
+
+[11:04:00] 	04-27-11-23-03-57.jpg matched 0.58% with Freedom Trail
+
+[11:04:01] 	04-27-11-23-03-57.jpg matched 0.39% with Harvard
+
+[11:04:01] 	04-27-11-23-03-57.jpg matched 1.95% with Hawaii
+
+[11:04:02] 	04-27-11-23-03-57.jpg matched 0.97% with Holocaust Memorial
+
+[11:04:02] Match Time for 04-27-11-23-03-57.jpg = 3.7636e+009m
+
+[11:04:02] 04-27-11-23-03-57.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[11:09:03] Building SURF reference library with data/library/index.xml...
+
+[11:09:38] Build Time for 6 Images = 3.58366e+010m
+
+[11:09:50] New client (-1) using port -19722 doing work!
+
+[11:10:04] Using SURF to match 04-27-11-23-10-02.jpg to image library
+
+[11:10:05] 	04-27-11-23-10-02.jpg matched 15.56% with Boston
+
+[11:10:05] 	04-27-11-23-10-02.jpg matched 1.17% with Bunker Hill Memorial
+
+[11:10:05] 	04-27-11-23-10-02.jpg matched 0.58% with Freedom Trail
+
+[11:10:06] 	04-27-11-23-10-02.jpg matched 0.39% with Harvard
+
+[11:10:06] 	04-27-11-23-10-02.jpg matched 1.95% with Hawaii
+
+[11:10:07] 	04-27-11-23-10-02.jpg matched 0.97% with Holocaust Memorial
+
+[11:10:07] Match Time for 04-27-11-23-10-02.jpg = 3.33286e+009m
+
+[11:10:07] 04-27-11-23-10-02.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[11:11:12] Building SURF reference library with data/library/index.xml...
+
+[11:11:50] Build Time for 6 Images = 3.74732e+010m
+
+[11:12:02] New client (4294967295) using port 61942 doing work!
+
+[11:12:13] Using SURF to match 04-27-11-23-12-12.jpg to image library
+
+[11:12:14] 	04-27-11-23-12-12.jpg matched 15.56% with Boston
+
+[11:12:14] 	04-27-11-23-12-12.jpg matched 1.17% with Bunker Hill Memorial
+
+[11:12:15] 	04-27-11-23-12-12.jpg matched 0.58% with Freedom Trail
+
+[11:12:17] 	04-27-11-23-12-12.jpg matched 0.39% with Harvard
+
+[11:12:18] 	04-27-11-23-12-12.jpg matched 1.95% with Hawaii
+
+[11:12:19] 	04-27-11-23-12-12.jpg matched 0.97% with Holocaust Memorial
+
+[11:12:19] Match Time for 04-27-11-23-12-12.jpg = 6.38419e+009m
+
+[11:12:19] 04-27-11-23-12-12.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[11:13:26] Building SURF reference library with data/library/index.xml...
+
+[11:14:08] Build Time for 6 Images = 4.24849e+010m
+
+[11:14:14] New client (4294967295) using port 62966 doing work!
+
+[11:14:18] Using SURF to match 04-27-11-23-14-17.jpg to image library
+
+[11:14:19] 	04-27-11-23-14-17.jpg matched 15.56% with Boston
+
+[11:14:20] 	04-27-11-23-14-17.jpg matched 1.17% with Bunker Hill Memorial
+
+[11:14:20] 	04-27-11-23-14-17.jpg matched 0.58% with Freedom Trail
+
+[11:14:22] 	04-27-11-23-14-17.jpg matched 0.39% with Harvard
+
+[11:14:22] 	04-27-11-23-14-17.jpg matched 1.95% with Hawaii
+
+[11:14:23] 	04-27-11-23-14-17.jpg matched 0.97% with Holocaust Memorial
+
+[11:14:23] Match Time for 04-27-11-23-14-17.jpg = 4.35184e+009m
+
+[11:14:23] 04-27-11-23-14-17.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[11:35:16] Building SURF reference library with data/library/index.xml...
+
+[11:35:55] Build Time for 6 Images = 3.94048e+010m
+
+[11:36:01] New client (4294967295) using port 18167 doing work!
+
+[11:36:07] Using SURF to match 04-27-11-23-36-06.jpg to image library
+
+[11:36:08] 	04-27-11-23-36-06.jpg matched 15.56% with Boston
+
+[11:36:08] 	04-27-11-23-36-06.jpg matched 1.17% with Bunker Hill Memorial
+
+[11:36:08] 	04-27-11-23-36-06.jpg matched 0.58% with Freedom Trail
+
+[11:36:09] 	04-27-11-23-36-06.jpg matched 0.39% with Harvard
+
+[11:36:09] 	04-27-11-23-36-06.jpg matched 1.95% with Hawaii
+
+[11:36:10] 	04-27-11-23-36-06.jpg matched 0.97% with Holocaust Memorial
+
+[11:36:10] Match Time for 04-27-11-23-36-06.jpg = 2.85236e+009m
+
+[11:36:10] 04-27-11-23-36-06.jpg was best matched with Boston
+
+[11:38:08] New client (4294967295) using port 20471 doing work!
+
+[11:38:23] Using SURF to match 04-27-11-23-38-21.jpg to image library
+
+[11:38:30] 	04-27-11-23-38-21.jpg matched 15.56% with Boston
+
+[11:38:34] 	04-27-11-23-38-21.jpg matched 1.17% with Bunker Hill Memorial
+
+[11:38:39] 	04-27-11-23-38-21.jpg matched 0.58% with Freedom Trail
+
+[11:38:51] 	04-27-11-23-38-21.jpg matched 0.39% with Harvard
+
+[11:38:53] 	04-27-11-23-38-21.jpg matched 1.95% with Hawaii
+
+[11:39:00] 	04-27-11-23-38-21.jpg matched 0.97% with Holocaust Memorial
+
+[11:39:00] Match Time for 04-27-11-23-38-21.jpg = 3.70136e+010m
+
+[11:39:00] 04-27-11-23-38-21.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[11:41:42] Building SURF reference library with data/library/index.xml...
+
+[11:42:14] Build Time for 6 Images = 3.22971e+010m
+
+[11:42:20] New client (4294967295) using port 23543 doing work!
+
+[11:42:28] Using SURF to match 04-27-11-23-42-26.jpg to image library
+
+[11:42:29] 	04-27-11-23-42-26.jpg matched 15.56% with Boston
+
+[11:42:30] 	04-27-11-23-42-26.jpg matched 1.17% with Bunker Hill Memorial
+
+[11:42:30] 	04-27-11-23-42-26.jpg matched 0.58% with Freedom Trail
+
+[11:42:32] 	04-27-11-23-42-26.jpg matched 0.39% with Harvard
+
+[11:42:32] 	04-27-11-23-42-26.jpg matched 1.95% with Hawaii
+
+[11:42:33] 	04-27-11-23-42-26.jpg matched 0.97% with Holocaust Memorial
+
+[11:42:33] Match Time for 04-27-11-23-42-26.jpg = 5.11431e+009m
+
+[11:42:33] 04-27-11-23-42-26.jpg was best matched with Boston
+
+
+
+-------------------------------------------
+[11:57:21] Building SURF reference library with data/library/index.xml...
+
+[11:57:49] Build Time for 6 Images = 2.79638e+010m
+
+[11:58:03] New client (4294967295) using port 46840 doing work!
+
+[11:58:10] Using SURF to match 04-27-11-23-58-09.jpg to image library
+
+[11:58:11] 	04-27-11-23-58-09.jpg matched 15.56% with Boston
+
+[11:58:11] 	04-27-11-23-58-09.jpg matched 1.17% with Bunker Hill Memorial
+
+[11:58:12] 	04-27-11-23-58-09.jpg matched 0.58% with Freedom Trail
+
+[11:58:12] 	04-27-11-23-58-09.jpg matched 0.39% with Harvard
+
+[11:58:13] 	04-27-11-23-58-09.jpg matched 1.95% with Hawaii
+
+[11:58:13] 	04-27-11-23-58-09.jpg matched 0.97% with Holocaust Memorial
+
+[11:58:13] Match Time for 04-27-11-23-58-09.jpg = 2.86293e+009m
+
+[11:58:13] 04-27-11-23-58-09.jpg was best matched with Boston
+

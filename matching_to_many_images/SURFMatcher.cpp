@@ -26,7 +26,6 @@ int SURFMatcher::Build(std::string fileName) {
 	double tt = (double) -cvGetTickCount();
 
 	// parse library file
-	fileName = "data/library/index.xml";
 	TiXmlDocument *doc = new TiXmlDocument(fileName.c_str());
 	const char dlmtr = '/';
 	size_t pos = fileName.rfind(dlmtr);
@@ -36,7 +35,6 @@ int SURFMatcher::Build(std::string fileName) {
 	TiXmlNode *root = doc->FirstChild("images");
 	TiXmlNode *child = NULL;
 	while (child = root->IterateChildren(child)) {
-		// skip comments
 		if (child->Type() == TiXmlNode::TINYXML_COMMENT) continue;
 
 		TiXmlElement *element = child->ToElement();
@@ -44,14 +42,13 @@ int SURFMatcher::Build(std::string fileName) {
 		ImageData *data = new ImageData();
 		
 		// TODO: add error checking
+		// TODO: check for null descriptions
 		element->QueryIntAttribute("id", &(data->id));
 		data->name = string(element->Attribute("name"));
 		data->path = dirName + string(element->Attribute("path"));
-		std::cerr << "Path = " << data->path << std::endl;
 
 		TiXmlText *description = child->FirstChild()->ToText();
 		data->description = string(description->Value());
-		std::cerr << "Description = " << data->description << std::endl;
 
 		data->image = cvLoadImage((data->path).c_str(), CV_LOAD_IMAGE_GRAYSCALE);
 
@@ -65,7 +62,6 @@ int SURFMatcher::Build(std::string fileName) {
 	vector<ImageData *>::const_iterator refIt;
 	CvSeq *keyPoint, *descriptor;
 	for (refIt = referenceData_.begin(); refIt != referenceData_.end(); ++refIt) {
-		std::cerr << "refname " << (*refIt)->name << std::endl;
 		cvExtractSURF((*refIt)->image, 0, &keyPoint, &descriptor, storage, params);
 		refKD_.push_back(make_pair(keyPoint, descriptor));
 	}
@@ -79,55 +75,10 @@ int SURFMatcher::Build(std::string fileName) {
 		refKD_.size(), ((tt + cvGetTickCount()) / cvGetTickFrequency()*1000.));
 	
 	return referenceData_.size();
-/*
-	string referenceDirName;
-	Util::GetFileNamesFromFile(fileName, referenceDirName, referenceImageNames_);
-	if (referenceImageNames_.empty()) {
-		logger_->Log(ERR, "No images to build SURF library!\n");
-		return 0;
-	}
-
-	int errCount = 0;
-	vector<string>::const_iterator it;
-	for (it = referenceImageNames_.begin(); it != referenceImageNames_.end(); ++it) {
-		string name = referenceDirName + *it;
-		IplImage *img = cvLoadImage(name.c_str(), CV_LOAD_IMAGE_GRAYSCALE);
-		if (!img) {
-			++errCount;
-			logger_->Log(ERR, "Reference image %s could not be read!\n", name.c_str());
-		} else {
-			referenceImages_.push_back(img);
-		}
-	}
-
-	if (errCount) {
-		logger_->Log(WARNING, "Error reading %d reference images!\n", errCount);
-	}
-
-	// TODO: prolly move as params to ctor	
-	CvMemStorage *storage = cvCreateMemStorage(0);
-	CvSURFParams params = cvSURFParams(400, 1);
-
-	vector<IplImage *>::const_iterator refIt;
-	CvSeq *keyPoint, *descriptor;
-	for (refIt = referenceImages_.begin(); refIt != referenceImages_.end(); ++refIt) {
-		cvExtractSURF(*refIt, 0, &keyPoint, &descriptor, storage, params);
-		refKD_.push_back(make_pair(keyPoint, descriptor));
-	}
-
-	if (refKD_.size() != referenceImages_.size()) {
-		logger_->Log(WARNING, "Only extracted %d / %d images!\n",
-			refKD_.size(), referenceImages_.size());
-	}
-
-	logger_->Log(INFO, "Build Time for %d Images = %gm\n",
-		refKD_.size(), ((tt + cvGetTickCount()) / cvGetTickFrequency()*1000.));
-	
-	return referenceImages_.size();
-	*/
 }
 
-double SURFMatcher::MatchAgainstLibrary(const char *queryImageName,
+// return null if no match, otherwise return image description to display
+string SURFMatcher::MatchAgainstLibrary(const char *queryImageName,
 		const IplImage *queryImage, const CvSeq *queryKeyPoints, const CvSeq *queryDescriptors) const {
 	logger_->Log(INFO, "Using SURF to match %s to image library\n", queryImageName);
 	IplImage *referenceImage = NULL;
@@ -163,11 +114,12 @@ double SURFMatcher::MatchAgainstLibrary(const char *queryImageName,
 	if (indexBestMatch >= 0 && indexBestMatch < referenceData_.size()) {
 		logger_->Log(INFO, "%s was best matched with %s\n",
 			queryImageName, referenceData_[indexBestMatch]->name.c_str());
-	} else {
-		logger_->Log(INFO, "Unable to find a match for %s\n", queryImageName);
-	}
+		return referenceData_[indexBestMatch]->description;
+	} 
 
-	return bestPercentage;
+	logger_->Log(INFO, "Unable to find a match for %s\n", queryImageName);
+	string str;  // TODO: so ghetto...
+	return str;
 }
 
 // object = the query image

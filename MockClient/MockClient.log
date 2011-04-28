@@ -1,5 +1,5 @@
-﻿Build started 4/27/2011 8:10:05 PM.
-     1>Project "D:\Documents\UCSD\BSMS\SP11\Masters Project\Image Matching Sandbox\Image Match VS\MockClient\MockClient.vcxproj" on node 1 (rebuild target(s)).
+﻿Build started 4/27/2011 11:34:40 PM.
+     1>Project "D:\Documents\UCSD\BSMS\SP11\Masters Project\Image Matching Sandbox\Image Match VS\MockClient\MockClient.vcxproj" on node 23 (rebuild target(s)).
          Deleting file "Debug\lastbuild.timestamp".
          Deleting file "Debug\lastsuccessfulbuild.timestamp".
      1>_PrepareForBuild:
@@ -27,4 +27,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:22.51
+Time Elapsed 00:00:09.64

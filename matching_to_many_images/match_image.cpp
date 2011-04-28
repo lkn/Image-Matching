@@ -42,6 +42,7 @@ bool readImages(const string& queryImageName, IplImage **queryImage) {
     return true;
 }
 
+/*
 int _tmain(int argc, char** argv) {
     string queryImageName = defaultQueryImageName;
     string fileWithTrainImages = defaultFileWithTrainImages;
@@ -70,3 +71,4 @@ int _tmain(int argc, char** argv) {
 	surfMatcher.Visualize(dirToSaveResImages, queryImageName, queryImage, queryKeyPoints, queryDescriptors);
 	return 0;
 }
+*/

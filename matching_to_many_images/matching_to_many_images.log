@@ -1,16 +1,11 @@
-﻿Build started 4/27/2011 8:41:15 PM.
-     1>Project "D:\Documents\UCSD\BSMS\SP11\Masters Project\Image Matching Sandbox\Image Match VS\matching_to_many_images\matching_to_many_images.vcxproj" on node 14 (build target(s)).
+﻿Build started 4/28/2011 12:01:23 AM.
+     1>Project "D:\Documents\UCSD\BSMS\SP11\Masters Project\Image Matching Sandbox\Image Match VS\matching_to_many_images\matching_to_many_images.vcxproj" on node 26 (build target(s)).
        Skipping target "IsProjectFileNewer" because all output files are up-to-date with respect to the input files.
      1>_PrepareForBuild:
          Touching "Debug\lastbuild.timestamp".
        ClCompile:
          Skipping task because its outputs are up-to-date.
-         SURFMatcher.cpp
-     1>d:\libraries\opencv2.2\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
-     1>d:\documents\ucsd\bsms\sp11\masters project\image matching sandbox\image match vs\matching_to_many_images\surfmatcher.cpp(140): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\documents\ucsd\bsms\sp11\masters project\image matching sandbox\image match vs\matching_to_many_images\surfmatcher.cpp(163): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\documents\ucsd\bsms\sp11\masters project\image matching sandbox\image match vs\matching_to_many_images\surfmatcher.cpp(270): warning C4018: '<' : signed/unsigned mismatch
+         Sockette.cpp
        ManifestResourceCompile:
          Skipping task because its outputs are up-to-date.
        Manifest:
@@ -24,4 +19,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:09.41
+Time Elapsed 00:00:05.13

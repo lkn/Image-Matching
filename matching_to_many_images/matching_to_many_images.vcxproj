@@ -94,11 +94,9 @@
     <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="find_obj.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Sockette.cpp" />
     <ClCompile Include="SURFMatcher.cpp" />
-    <ClCompile Include="matcher_simple.cpp" />
     <ClCompile Include="match_image.cpp" />
     <ClCompile Include="server.cpp" />
     <ClCompile Include="stdafx.cpp">

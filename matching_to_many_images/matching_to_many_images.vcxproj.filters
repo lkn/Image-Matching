@@ -47,14 +47,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="find_obj.cpp">
-      <Filter>Reference Files</Filter>
-    </ClCompile>
     <ClCompile Include="Logger.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="matcher_simple.cpp">
-      <Filter>Reference Files</Filter>
     </ClCompile>
     <ClCompile Include="match_image.cpp">
       <Filter>Source Files</Filter>

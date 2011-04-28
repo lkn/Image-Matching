@@ -2,11 +2,12 @@
 #include <winsock2.h>
 #include "Sockette.h"
 
-// Create the socket
+// Create the socket (ex. server)
 Sockette::Sockette(u_short port) : port_(port) {	
 	Init();
 }
 
+// Wrap a socket (ex. one that was returned from accept())
 Sockette::Sockette(SOCKET s) {
 	handle_ = s;
 	SOCKADDR_IN sadi;
@@ -41,7 +42,7 @@ Sockette::Sockette(SOCKET s) {
 
 	address_ = ntohl(inet_addr((char *) sadi.sin_addr.S_un.S_addr));
 	port_ = sadi.sin_port;
-	BOOL tru = TRUE;
+	BOOL tru = TRUE;  // disable Nagle
 	setsockopt(handle_, IPPROTO_TCP, TCP_NODELAY, (char *) &tru, sizeof(tru));
 }
 
@@ -68,6 +69,8 @@ void Sockette::StartListening() {
 	listen(handle_, 5);  // TODO: make configurable
 }
 
+// Expects that whoever is sending data is using the first 2 bytes
+// to encode how many bytes we should expect to receive.
 // Whoever sent in 'data' must deallocate it (this function allocates it)
 bool Sockette::Listen(char **data) {
 	unsigned char * tmp = (unsigned char *) calloc(10, sizeof(unsigned char));
@@ -104,6 +107,23 @@ bool Sockette::Listen(char **data) {
 	return true;
 }
 
+// TODO: make it work for large amounts of data
+bool Sockette::Send(std::string data) {
+	std::cout << "Sending " << data << std::endl;
+	if (data.empty()) {
+		std::cerr << "why you tryna send an empty string?\n";
+		return false;
+	}
+	int sent = send(handle_, data.c_str(), data.length(), 0);
+	if (sent == SOCKET_ERROR) {
+		std::cerr << "Error sending packet! " << WSAGetLastError() << std::endl;
+		return false;
+	}
+	std::cout << "Number of bytes sent to client: " << sent << std::endl;
+	return true;
+}
+
 Sockette::~Sockette() {
+	// TODO shutdown(handle_);
 	closesocket(handle_);
 }

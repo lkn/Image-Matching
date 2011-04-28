@@ -8,7 +8,7 @@
 Logger::Logger() {
 	struct tm timeinfo = Util::GetTimeInfo();
 	char buffer[80];
-	strftime(buffer, 80, "logs/%m-%d-%Y.txt", &timeinfo);
+	strftime(buffer, 80, "LOG-%m-%d-%Y.txt", &timeinfo);
 	Init(buffer);
 }
 

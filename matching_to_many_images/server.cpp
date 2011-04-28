@@ -24,7 +24,7 @@ CvSURFParams params = cvSURFParams(400, 1);  // TODO: make sure matches SURFMatc
 
 // TODO: change the fact that query images must be smaller than training image
 const string defaultQueryImageName = "data/boston_closeup.jpg";
-const string defaultLibraryFile = "data/training/trainingImages.txt";
+const string defaultLibraryFile = "data/library/index.xml";
 const string defaultDirToSaveResImages = "data/results";
 
 #define QUERY_WIDTH  400  // TODO: make configurable, and let client know configs
@@ -32,25 +32,28 @@ const string defaultDirToSaveResImages = "data/results";
 
 // Deal with client
 DWORD WINAPI ClientLoop(LPVOID sockette) {
-	cout << "New client doing work!" << endl;
 	Sockette * clientSocket = (Sockette *) sockette;
-	
+	g_logger->Log(INFO, "New client (%lu) using port %u doing work!\n",
+					    clientSocket->address(), clientSocket->port());
+
 	while (true) {
-		char *data = NULL;
-		if (clientSocket->Listen(&data)) {
+		char *dataReceived = NULL;
+		string dataToSend;
+		// TODO: get rid of memory leaks
+		if (clientSocket->Listen(&dataReceived)) {
 			// Converting jpg to iplimage... 
-			CvMat cvmat = cvMat(QUERY_WIDTH, QUERY_HEIGHT, CV_8UC3, (void *) data);  // CV_32FC3
+			CvMat cvmat = cvMat(QUERY_WIDTH, QUERY_HEIGHT, CV_8UC3, (void *) dataReceived);
 			IplImage *frame = cvDecodeImage(&cvmat, 1);  // TODO: need to release?
 			
 			// actual image is in probably color (3 channels)
 			// but we need to use 1 channel to do surfmatching which uses grayscale
 			// images (1 channel)
-			IplImage *queryImage = cvCreateImage(cvSize(QUERY_WIDTH, QUERY_HEIGHT),IPL_DEPTH_8U,1);
+			IplImage *queryImage = cvCreateImage(cvSize(QUERY_WIDTH, QUERY_HEIGHT), IPL_DEPTH_8U, 1);
 			cvCvtColor(frame, queryImage, CV_BGR2GRAY);
 
 			struct tm timeinfo = Util::GetTimeInfo();
 			char queryName[128];
-			strftime(queryName, 128, "%m-%d-%y/%H-%M-%S.jpg", &timeinfo);
+			strftime(queryName, 128, "%m-%d-%y-%H-%M-%S.jpg", &timeinfo);
 			std::cout << "saving to file " << queryName << endl;
 			cvSaveImage(queryName, queryImage);
 
@@ -60,15 +63,20 @@ DWORD WINAPI ClientLoop(LPVOID sockette) {
 			printf("Query Descriptors %d\nQuery Extraction Time = %gm\n", queryDescriptors->total,
 			((tt + cvGetTickCount()) / cvGetTickFrequency()*1000.));
 			
-			g_matcher->MatchAgainstLibrary(queryName, queryImage, queryKeyPoints, queryDescriptors);
+			dataToSend = g_matcher->MatchAgainstLibrary(queryName, queryImage, queryKeyPoints, queryDescriptors);
+			if (dataToSend.empty()) {
+				std::cout << "NO MATCH!\n";
+			}
 
+			clientSocket->Send(dataToSend);
+			
 			//cvShowImage("magic?", frame);
 			//cvWaitKey();  // need for showimage
-			delete data;
 		} else {
 			break;
 		}
 	}
+	std::cout << "Client peaceing out\n";
 	return 0;
 }
 
@@ -85,6 +93,8 @@ DWORD WINAPI ConnectLoop(LPVOID sockette) {
 		}
 
 		cout << "We have a request!\r\n\r\n" << endl;
+		const char *msg = "hello there!\n";
+		send(clientSock, msg, strlen(msg), 0);
 		if (clientSock == INVALID_SOCKET) {
 			cerr << "TODO: Invalid socket :(\r\n\r\n" << endl;
 		} else {
@@ -102,8 +112,6 @@ DWORD WINAPI ConnectLoop(LPVOID sockette) {
 	return 0;
 }
 
-/*
-// TODO: on startup, read from file to build library
 int _tmain() {
 	
 	g_logger = new Logger();
@@ -133,11 +141,15 @@ int _tmain() {
 			continue;
 		}
 
+		//char *msg = "good day to you sir!";
+		//send(clientSock, msg, strlen(msg), 0);
+		//std::cout << "sent " << msg << " error: " << WSAGetLastError() << std::endl;
+
 		cout << "We have a request!\r\n\r\n" << endl;
-		//u_long iMode = 1;  // set non-blocking mode
-		//if (ioctlsocket(clientSock, FIONBIO, &iMode)) {
-		//	std::cerr << "Error: " << WSAGetLastError();
-		//}
+		u_long iMode = 1;  // set non-blocking mode
+		if (ioctlsocket(clientSock, FIONBIO, &iMode)) {
+			std::cerr << "Error: " << WSAGetLastError();
+		}
 
 		// branch off a thread to deal with the new connection
 		Sockette * newSockette = new Sockette(clientSock);
@@ -157,4 +169,3 @@ int _tmain() {
 	system("PAUSE");
 	return 0;
 }
-*/
