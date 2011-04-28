@@ -1,0 +1,116 @@
+
+
+-------------------------------------------
+[07:06:13] Building SURF reference library with data/training/trainingImages.txt...
+
+[07:06:42] Build Time for 6 Images = 2.89244e+010m
+
+
+
+-------------------------------------------
+[08:13:16] Building SURF reference library with data/training/trainingImages.txt...
+
+
+
+-------------------------------------------
+[08:16:19] Building SURF reference library with data/training/trainingImages.txt...
+
+
+
+-------------------------------------------
+[08:18:08] Building SURF reference library with data/training/trainingImages.txt...
+
+
+
+-------------------------------------------
+[08:19:25] Building SURF reference library with data/training/trainingImages.txt...
+
+
+
+-------------------------------------------
+[08:22:27] Building SURF reference library with data/training/trainingImages.txt...
+
+
+
+-------------------------------------------
+[08:23:29] Building SURF reference library with data/training/trainingImages.txt...
+
+
+
+-------------------------------------------
+[08:25:11] Building SURF reference library with data/training/trainingImages.txt...
+
+
+
+-------------------------------------------
+[08:25:39] Building SURF reference library with data/training/trainingImages.txt...
+
+
+
+-------------------------------------------
+[08:28:57] Building SURF reference library with data/training/trainingImages.txt...
+
+
+
+-------------------------------------------
+[08:29:33] Building SURF reference library with data/training/trainingImages.txt...
+
+
+
+-------------------------------------------
+[08:30:48] Building SURF reference library with data/training/trainingImages.txt...
+
+
+
+-------------------------------------------
+[08:35:01] Building SURF reference library with data/training/trainingImages.txt...
+
+[08:35:29] Build Time for 6 Images = 2.82099e+010m
+
+[08:35:31] Using SURF to match data/boston_closeup.jpg to image library
+
+[08:35:32] 	data/boston_closeup.jpg matched 10.93% with Boston
+
+[08:35:32] 	data/boston_closeup.jpg matched 1.33% with Bunker Hill Memorial
+
+[08:35:33] 	data/boston_closeup.jpg matched 0.67% with Freedom Trail
+
+[08:35:34] 	data/boston_closeup.jpg matched 0.80% with Harvard
+
+[08:35:34] 	data/boston_closeup.jpg matched 1.47% with Hawaii
+
+[08:35:35] 	data/boston_closeup.jpg matched 1.33% with Holocaust Memorial
+
+[08:35:35] Match Time for data/boston_closeup.jpg = 4.29182e+009m
+
+[08:35:35] data/boston_closeup.jpg was best matched with Boston
+
+[08:35:41] Visualization Time for data/boston_closeup.jpg = 5.97416e+009m
+
+
+
+-------------------------------------------
+[08:41:27] Building SURF reference library with data/training/trainingImages.txt...
+
+[08:42:04] Build Time for 6 Images = 3.65546e+010m
+
+[08:42:05] Using SURF to match data/boston_closeup.jpg to image library
+
+[08:42:07] 	data/boston_closeup.jpg matched 10.93% with Boston
+
+[08:42:07] 	data/boston_closeup.jpg matched 1.33% with Bunker Hill Memorial
+
+[08:42:08] 	data/boston_closeup.jpg matched 0.67% with Freedom Trail
+
+[08:42:09] 	data/boston_closeup.jpg matched 0.80% with Harvard
+
+[08:42:10] 	data/boston_closeup.jpg matched 1.47% with Hawaii
+
+[08:42:10] 	data/boston_closeup.jpg matched 1.33% with Holocaust Memorial
+
+[08:42:10] Match Time for data/boston_closeup.jpg = 5.01927e+009m
+
+[08:42:10] data/boston_closeup.jpg was best matched with Boston
+
+[08:42:17] Visualization Time for data/boston_closeup.jpg = 6.49329e+009m
+

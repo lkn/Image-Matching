@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+The paths should be defined relative to this index.xml file.
+-->
+<images>
+	<image id="0" name="Boston" path="boston.jpg">
+	boston bla bla bla
+	</image>
+	
+	<image id="1" name="Bunker Hill Memorial" path="bunker_hill_memorial.jpg">
+	bunkerhill bla bla bla
+	</image>
+	
+	<image id="2" name="Freedom Trail" path="freedom_trail.jpg">
+	freedom trail bla bla bla
+	</image>
+	
+	<image id="3" name="Harvard" path="harvard.jpg">
+	harvard bla bla bla
+	</image>
+	
+	<image id="4" name="Hawaii" path="hawaii.JPG">
+	hawaii bla bla bla
+	</image>
+	
+	<image id="5" name="Holocaust Memorial" path="holocaust_memorial.jpg">
+	holocaust bla bla bla
+	</image>
+</images>

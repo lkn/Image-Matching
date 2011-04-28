@@ -1,0 +1,30 @@
+﻿Build started 4/27/2011 8:10:05 PM.
+     1>Project "D:\Documents\UCSD\BSMS\SP11\Masters Project\Image Matching Sandbox\Image Match VS\MockClient\MockClient.vcxproj" on node 1 (rebuild target(s)).
+         Deleting file "Debug\lastbuild.timestamp".
+         Deleting file "Debug\lastsuccessfulbuild.timestamp".
+     1>_PrepareForBuild:
+         Creating "Debug\lastbuild.timestamp" because "AlwaysCreate" was specified.
+       ClCompile:
+         stdafx.cpp
+         client.cpp
+       ManifestResourceCompile:
+         Microsoft (R) Windows (R) Resource Compiler Version 6.1.7000.0
+         
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         
+       Manifest:
+         Microsoft (R) Windows (R) Resource Compiler Version 6.1.7000.0
+         
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         
+       LinkEmbedManifest:
+         MockClient.vcxproj -> D:\Documents\UCSD\BSMS\SP11\Masters Project\Image Matching Sandbox\Image Match VS\Debug\MockClient.exe
+       _AfterBuild:
+         Creating "Debug\LastSuccessfulBuild.timestamp" because "AlwaysCreate" was specified.
+     1>Done Building Project "D:\Documents\UCSD\BSMS\SP11\Masters Project\Image Matching Sandbox\Image Match VS\MockClient\MockClient.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:22.51

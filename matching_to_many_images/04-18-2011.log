@@ -1,0 +1,100 @@
+
+
+-------------------------------------------
+[12:22:11]	Building SURF reference library with data/training/trainingImages.txt...
+
+[12:22:30]	Build Time for 6 Images = 1.89582e+010m
+
+[12:22:31]	Matching data/boston_edge.jpg to SURF library
+
+[12:22:31]	data/boston_edge.jpg matched 1.95% with hawaii.JPG
+
+[12:22:31]	data/boston_edge.jpg matched 15.56% with boston.jpg
+
+[12:22:31]	data/boston_edge.jpg matched 1.17% with bunker_hill_memorial.jpg
+
+[12:22:32]	data/boston_edge.jpg matched 0.58% with freedom_trail.jpg
+
+[12:22:32]	data/boston_edge.jpg matched 0.39% with harvard.jpg
+
+[12:22:32]	data/boston_edge.jpg matched 0.97% with holocaust_memorial.jpg
+
+[12:22:32]	Match Time for data/boston_edge.jpg = 1.73384e+009m
+
+[12:22:32]	data/boston_edge.jpg was best matched with boston.jpg
+
+
+
+-------------------------------------------
+[12:46:15]	Building SURF reference library with data/training/trainingImages.txt...
+
+[12:46:31]	Build Time for 6 Images = 1.63556e+010m
+
+[12:46:32]	Matching data/boston_edge.jpg to SURF library
+
+[12:46:32]		data/boston_edge.jpg matched 1.95% with hawaii.JPG
+
+[12:46:32]		data/boston_edge.jpg matched 15.56% with boston.jpg
+
+[12:46:32]		data/boston_edge.jpg matched 1.17% with bunker_hill_memorial.jpg
+
+[12:46:33]		data/boston_edge.jpg matched 0.58% with freedom_trail.jpg
+
+[12:46:33]		data/boston_edge.jpg matched 0.39% with harvard.jpg
+
+[12:46:33]		data/boston_edge.jpg matched 0.97% with holocaust_memorial.jpg
+
+[12:46:33]	Match Time for data/boston_edge.jpg = 1.58469e+009m
+
+[12:46:33]	data/boston_edge.jpg was best matched with boston.jpg
+
+
+
+-------------------------------------------
+[12:48:17]	Building SURF reference library with data/training/trainingImages.txt...
+
+[12:48:34]	Build Time for 6 Images = 1.71388e+010m
+
+[12:48:35]	Matching data/boston_closeup.jpg to SURF library
+
+[12:48:35]		data/boston_closeup.jpg matched 1.47% with hawaii.JPG
+
+[12:48:36]		data/boston_closeup.jpg matched 10.93% with boston.jpg
+
+[12:48:36]		data/boston_closeup.jpg matched 1.33% with bunker_hill_memorial.jpg
+
+[12:48:37]		data/boston_closeup.jpg matched 0.67% with freedom_trail.jpg
+
+[12:48:37]		data/boston_closeup.jpg matched 0.80% with harvard.jpg
+
+[12:48:38]		data/boston_closeup.jpg matched 1.33% with holocaust_memorial.jpg
+
+[12:48:38]	Match Time for data/boston_closeup.jpg = 2.37351e+009m
+
+[12:48:38]	data/boston_closeup.jpg was best matched with boston.jpg
+
+
+
+-------------------------------------------
+[01:12:57]	Building SURF reference library with data/training/trainingImages.txt...
+
+[01:13:19]	Build Time for 6 Images = 2.21677e+010m
+
+[01:13:20]	Matching data/boston_closeup.jpg to SURF library
+
+[01:13:20]		data/boston_closeup.jpg matched 1.47% with hawaii.JPG
+
+[01:13:21]		data/boston_closeup.jpg matched 10.93% with boston.jpg
+
+[01:13:22]		data/boston_closeup.jpg matched 1.33% with bunker_hill_memorial.jpg
+
+[01:13:22]		data/boston_closeup.jpg matched 0.67% with freedom_trail.jpg
+
+[01:13:23]		data/boston_closeup.jpg matched 0.80% with harvard.jpg
+
+[01:13:24]		data/boston_closeup.jpg matched 1.33% with holocaust_memorial.jpg
+
+[01:13:24]	Match Time for data/boston_closeup.jpg = 3.56405e+009m
+
+[01:13:24]	data/boston_closeup.jpg was best matched with boston.jpg
+
