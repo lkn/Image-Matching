@@ -69,7 +69,6 @@ DWORD WINAPI ClientLoop(LPVOID sockette) {
 			}
 
 			clientSocket->Send(dataToSend);
-			
 			//cvShowImage("magic?", frame);
 			//cvWaitKey();  // need for showimage
 		} else {
@@ -77,10 +76,12 @@ DWORD WINAPI ClientLoop(LPVOID sockette) {
 		}
 	}
 	std::cout << "Client peaceing out\n";
+	delete clientSocket;
 	return 0;
 }
 
 // Wait for incoming connections
+/*
 DWORD WINAPI ConnectLoop(LPVOID sockette) {
 	Sockette * s = (Sockette *) sockette;
 
@@ -95,6 +96,7 @@ DWORD WINAPI ConnectLoop(LPVOID sockette) {
 		cout << "We have a request!\r\n\r\n" << endl;
 		const char *msg = "hello there!\n";
 		send(clientSock, msg, strlen(msg), 0);
+
 		if (clientSock == INVALID_SOCKET) {
 			cerr << "TODO: Invalid socket :(\r\n\r\n" << endl;
 		} else {
@@ -111,6 +113,7 @@ DWORD WINAPI ConnectLoop(LPVOID sockette) {
 	}
 	return 0;
 }
+*/
 
 int _tmain() {
 	
@@ -141,15 +144,12 @@ int _tmain() {
 			continue;
 		}
 
-		//char *msg = "good day to you sir!";
-		//send(clientSock, msg, strlen(msg), 0);
-		//std::cout << "sent " << msg << " error: " << WSAGetLastError() << std::endl;
-
 		cout << "We have a request!\r\n\r\n" << endl;
-		u_long iMode = 1;  // set non-blocking mode
-		if (ioctlsocket(clientSock, FIONBIO, &iMode)) {
-			std::cerr << "Error: " << WSAGetLastError();
-		}
+
+		//u_long iMode = 1;  // set non-blocking mode
+		//if (ioctlsocket(clientSock, FIONBIO, &iMode)) {
+		//	std::cerr << "Error: " << WSAGetLastError();
+		//}
 
 		// branch off a thread to deal with the new connection
 		Sockette * newSockette = new Sockette(clientSock);

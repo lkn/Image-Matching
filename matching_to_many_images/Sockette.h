@@ -21,7 +21,7 @@ public:
 	u_short port() const { return port_; }
 
 private:
-	void Init();
+	void Create();
 
 	SOCKET handle_;
 	u_short port_;

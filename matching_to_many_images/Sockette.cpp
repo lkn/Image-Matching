@@ -4,7 +4,7 @@
 
 // Create the socket (ex. server)
 Sockette::Sockette(u_short port) : port_(port) {	
-	Init();
+	Create();
 }
 
 // Wrap a socket (ex. one that was returned from accept())
@@ -42,12 +42,12 @@ Sockette::Sockette(SOCKET s) {
 
 	address_ = ntohl(inet_addr((char *) sadi.sin_addr.S_un.S_addr));
 	port_ = sadi.sin_port;
-	BOOL tru = TRUE;  // disable Nagle
+	int tru = 1;  // disable Nagle
 	setsockopt(handle_, IPPROTO_TCP, TCP_NODELAY, (char *) &tru, sizeof(tru));
 }
 
 // Creates and binds to socket
-void Sockette::Init() {
+void Sockette::Create() {
 	handle_ = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if (handle_ == INVALID_SOCKET)	{
 		std::cout << "Socket creation failed.\n";
@@ -114,6 +114,8 @@ bool Sockette::Send(std::string data) {
 		std::cerr << "why you tryna send an empty string?\n";
 		return false;
 	}
+	// TODO: hack... we just add a new line since its easy for java client to receive
+	data.append("\n");
 	int sent = send(handle_, data.c_str(), data.length(), 0);
 	if (sent == SOCKET_ERROR) {
 		std::cerr << "Error sending packet! " << WSAGetLastError() << std::endl;
