@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "matching_to_many_images", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MockClient", "MockClient\MockClient.vcxproj", "{7B4C6FA9-9205-4FA7-B142-40BAC6CC90AB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MockServer", "MockServer\MockServer.vcxproj", "{D1C082CF-D100-44D3-8F31-702AF05E5AD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{7B4C6FA9-9205-4FA7-B142-40BAC6CC90AB}.Debug|Win32.Build.0 = Debug|Win32
 		{7B4C6FA9-9205-4FA7-B142-40BAC6CC90AB}.Release|Win32.ActiveCfg = Release|Win32
 		{7B4C6FA9-9205-4FA7-B142-40BAC6CC90AB}.Release|Win32.Build.0 = Release|Win32
+		{D1C082CF-D100-44D3-8F31-702AF05E5AD9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D1C082CF-D100-44D3-8F31-702AF05E5AD9}.Debug|Win32.Build.0 = Debug|Win32
+		{D1C082CF-D100-44D3-8F31-702AF05E5AD9}.Release|Win32.ActiveCfg = Release|Win32
+		{D1C082CF-D100-44D3-8F31-702AF05E5AD9}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

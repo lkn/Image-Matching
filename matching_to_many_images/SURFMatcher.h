@@ -73,6 +73,7 @@ private:
 	std::vector<ImageData *> referenceData_;
 
 	Logger *logger_;
+	double matchThreshold_;  // TODO: use some config for this... right now manually set based on educated guess
 };
 
 #endif

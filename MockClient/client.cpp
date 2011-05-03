@@ -28,7 +28,7 @@ int _tmain(void)
 	
 	// Resolve IP address for hostname
 	struct hostent *host;
-	if((host=gethostbyname("localhost"))==NULL)
+	if((host=gethostbyname("pumice.ucsd.edu"))==NULL)
 	{
 		std::cout<<"Failed to resolve hostname.\r\n";
 		WSACleanup();
@@ -38,7 +38,7 @@ int _tmain(void)
 	
 	// Setup our socket address structure
 	SOCKADDR_IN SockAddr;
-	SockAddr.sin_port=htons(8888);
+	SockAddr.sin_port=htons(1111);
 	SockAddr.sin_family=AF_INET;
 	SockAddr.sin_addr.s_addr=*((unsigned long*)host->h_addr);
 	

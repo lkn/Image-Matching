@@ -73,12 +73,15 @@ void Sockette::StartListening() {
 // to encode how many bytes we should expect to receive.
 // Whoever sent in 'data' must deallocate it (this function allocates it)
 bool Sockette::Listen(char **data) {
+	std::cout << "Listening...." << std::endl;
 	unsigned char * tmp = (unsigned char *) calloc(10, sizeof(unsigned char));
 	if (tmp == NULL) std::cerr << "calloc returned NULL";
 
 	short expectedSize = 0;
 	while (true) {
 		int n = recv(handle_, (char *) tmp, 2, 0);
+		std::cout << "Received data from client!" << std::endl;
+		std::cout << "error: " << WSAGetLastError() << std::endl;
 		if (n == SOCKET_ERROR) {
 			if (WSAGetLastError() == WSAEWOULDBLOCK) continue;
 			std::cerr << "Error getting packet size: " << WSAGetLastError() << std::endl;
@@ -87,6 +90,11 @@ bool Sockette::Listen(char **data) {
 		
 		expectedSize = tmp[0] << 8 | tmp[1];  // assumes big endian I think...
 		std::cout << "Expected size of data: " << expectedSize << std::endl;
+		if (expectedSize <= 0) {
+			std::cerr << "Something funny with client... we expect 0 bytes. Ignoring and quitting." << std::endl;
+			return false;
+		}
+
 		break;
 	}
 
@@ -97,13 +105,20 @@ bool Sockette::Listen(char **data) {
 
 		if (r == SOCKET_ERROR) {
 			if (WSAGetLastError() == WSAEWOULDBLOCK) continue;
-			std::cerr << "Couldn't receive, error: " << WSAGetLastError();
+			std::cerr << "Couldn't receive, error: " << WSAGetLastError() << std::endl;
 			return false;
 		}
 		numBytesRead += r;
 	}
 	std::cout << "Actually read " << numBytesRead << std::endl;
 	delete tmp;
+
+	// something funky happened, we'll just assume client is in some weird state
+	if (numBytesRead == 0) {
+		std::cerr << "Something funny with client... we read 0 bytes. Ignoring and quitting." << std::endl;
+		return false;
+	}
+
 	return true;
 }
 

@@ -9,7 +9,7 @@
 #include "Util.h"
 #include "tinyxml/tinyxml.h"
 
-SURFMatcher::SURFMatcher(Logger *logger) : logger_(logger) {
+SURFMatcher::SURFMatcher(Logger *logger) : logger_(logger), matchThreshold_(10.) {
 }
 
 SURFMatcher::~SURFMatcher() {
@@ -80,7 +80,7 @@ int SURFMatcher::Build(std::string fileName) {
 // return null if no match, otherwise return image description to display
 string SURFMatcher::MatchAgainstLibrary(const char *queryImageName,
 		const IplImage *queryImage, const CvSeq *queryKeyPoints, const CvSeq *queryDescriptors) const {
-	logger_->Log(INFO, "Using SURF to match %s to image library\n", queryImageName);
+	logger_->Log(INFO, "Using SURF to match %s to image library", queryImageName);
 	IplImage *referenceImage = NULL;
 	double matchPercentage = 0;
 	vector<int> ptPairs;
@@ -96,7 +96,7 @@ string SURFMatcher::MatchAgainstLibrary(const char *queryImageName,
 		matchPercentage = FindPairs(queryKeyPoints,
 			queryDescriptors, features.first, features.second, ptPairs);
 
-		logger_->Log(VERBOSE, "\t%s matched %2.2f%% with %s\n",
+		logger_->Log(VERBOSE, "\t%s matched %2.2f%% with %s",
 			queryImageName, matchPercentage, referenceData_[i]->name.c_str());
 
 		if (matchPercentage > bestPercentage) {
@@ -105,13 +105,11 @@ string SURFMatcher::MatchAgainstLibrary(const char *queryImageName,
 		}
 	}
 	
-	logger_->Log(INFO, "Match Time for %s = %gm\n",
+	logger_->Log(INFO, "Match Time for %s = %gm",
 		queryImageName, ((tt + cvGetTickCount()) / cvGetTickFrequency()*1000.));
 	
 
-	// TODO: need to put threshold on match. There may not always be a matching image in the library. min must be > 10%?
-	// TODO: this is also a bug if referenceImages_.size != referenceImageNames_.size
-	if (indexBestMatch >= 0 && indexBestMatch < referenceData_.size()) {
+	if (indexBestMatch >= 0 && indexBestMatch < referenceData_.size() && bestPercentage >= matchThreshold_) {
 		logger_->Log(INFO, "%s was best matched with %s\n",
 			queryImageName, referenceData_[indexBestMatch]->name.c_str());
 		return referenceData_[indexBestMatch]->description;

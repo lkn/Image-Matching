@@ -36,6 +36,7 @@ DWORD WINAPI ClientLoop(LPVOID sockette) {
 	g_logger->Log(INFO, "New client (%lu) using port %u doing work!\n",
 					    clientSocket->address(), clientSocket->port());
 
+	int c = 0;
 	while (true) {
 		char *dataReceived = NULL;
 		string dataToSend;
@@ -56,19 +57,23 @@ DWORD WINAPI ClientLoop(LPVOID sockette) {
 			strftime(queryName, 128, "%m-%d-%y-%H-%M-%S.jpg", &timeinfo);
 			std::cout << "saving to file " << queryName << endl;
 			cvSaveImage(queryName, queryImage);
-
+			
+			//clientSocket->Send(queryName);
 			CvSeq *queryKeyPoints = 0, *queryDescriptors = 0;
 			double tt = (double) -cvGetTickCount();
 			cvExtractSURF(queryImage, 0, &queryKeyPoints, &queryDescriptors, storage, params);
-			printf("Query Descriptors %d\nQuery Extraction Time = %gm\n", queryDescriptors->total,
-			((tt + cvGetTickCount()) / cvGetTickFrequency()*1000.));
+			printf("Query Descriptors %d\nQuery Extraction Time = %gm\n",
+				queryDescriptors->total, ((tt + cvGetTickCount()) / cvGetTickFrequency()*1000.));
 			
 			dataToSend = g_matcher->MatchAgainstLibrary(queryName, queryImage, queryKeyPoints, queryDescriptors);
 			if (dataToSend.empty()) {
 				std::cout << "NO MATCH!\n";
+			} else {
+				clientSocket->Send(dataToSend);
 			}
 
-			clientSocket->Send(dataToSend);
+			
+
 			//cvShowImage("magic?", frame);
 			//cvWaitKey();  // need for showimage
 		} else {
