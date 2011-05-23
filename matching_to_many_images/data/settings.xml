@@ -1,0 +1,38 @@
+<!-- sorry but I only handle landscape images =] -->
+
+<settings>
+	<query path="data/kt_queries/images.txt">
+		<!-- parameters to cvSurfParam -->
+		<surf>
+			<hessian_threshold>2000</hessian_threshold>
+			<extended_parameter>0</extended_parameter>
+		</surf>
+		
+		<!-- pixel sizes -->
+		<image>
+			<width>160</width>
+			<height>120</height>
+		</image>
+		
+	</query>
+	
+	<library path="data/kt_library/index.xml">
+		<!-- parameters to cvSurfParam -->
+		<surf>
+			<hessian_threshold>2000</hessian_threshold>
+			<extended_parameter>0</extended_parameter>
+		</surf>
+		
+		<!-- pixel sizes -->
+		<image>
+			<width>160</width>
+			<height>120</height>
+		</image>
+		
+		<!-- double for percentage -->
+		<match_threshold>10</match_threshold>
+	</library>
+	
+	<!-- if empty, then logger uses default file name ({date}.txt) -->
+	<log name="kt_library.txt" />
+</settings>
