@@ -26,16 +26,19 @@ class ExifInfo:
 
     # datetime when photo was taken
     if "Exif.Photo.DateTimeOriginal" in exif_keys:
-      self.data['datetime'] = metadata['Exif.Photo.DateTimeOriginal'].raw_value
+      dt = metadata['Exif.Photo.DateTimeOriginal'].value
+      self.data['datetime'] = dt.strftime('%A %d %B %Y, %H:%M:%S')
 
-    # shutter speed
-    if "Exif.Photo.ShutterSpeedValue" in exif_keys:
+    # shutter speed (funnily enough, its NOT ShutterSpeedValue tag)
+    if "Exif.Photo.ExposureTime" in exif_keys:
       self.data['shutter_speed'] = \
-          metadata['Exif.Photo.ShutterSpeedValue'].raw_value
+          metadata['Exif.Photo.ExposureTime'].raw_value
 
     # focal length
     if "Exif.Photo.FocalLength" in exif_keys:
-      self.data['focal_length'] = metadata['Exif.Photo.FocalLength'].raw_value
+      v = metadata['Exif.Photo.FocalLength'].value
+      txt = str(v.numerator / v.denominator) + ' mm'
+      self.data['focal_length'] = txt
   
     # get gps info
     if ("Exif.GPSInfo.GPSLatitude" in exif_keys

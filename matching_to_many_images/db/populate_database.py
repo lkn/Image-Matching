@@ -75,7 +75,7 @@ class DBHelper:
 
 
 def get_lib_xml_path(settings_xml_path):
-  # find the library xml
+  """Find the library xml from the settings xml."""
   root_path = os.path.dirname(settings_xml_path) + '/'
   settings_xml = xml.parse(settings_xml_path)
   lib_xml_path = settings_xml.find('library').get('path')
