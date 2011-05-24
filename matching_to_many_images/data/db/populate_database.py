@@ -1,9 +1,10 @@
 #!/bin/python
 
+import os
 import pyexiv2
 import sqlite3
 import sys
-import xml.etree.ElementTree
+import xml.etree.ElementTree as xml
 
 class ExifInfo:
   def __init__(self, image_path):
@@ -108,9 +109,16 @@ def main(args):
   db_helper = DBHelper('ivl.db')
   db_helper.clear_tables()
   db_helper.create_tables()
-  path = 'photo.jpg'
-  m = ExifInfo(path).data
-  db_helper.insert_from_dict('imagedata', m)
+#  path = 'photo.jpg'
+#  m = ExifInfo(path).data
+#  db_helper.insert_from_dict('imagedata', m)
+
+  # find the library
+  settings_xml_path = '../settings.xml'
+  settings_xml = xml.parse(settings_xml_path)
+  lib_xml_path = settings_xml.find('library').get('path')
+  lib_xml = xml.parse(os.path.dirname(settings_xml_path) + '/' + lib_xml_path)
+
 
 if __name__ == "__main__":
   main(sys.argv[1:])
