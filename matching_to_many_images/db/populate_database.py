@@ -3,7 +3,7 @@
 import os
 import sqlite3
 import sys
-from ExifInfo import *
+from ExifInfo import ExifInfo
 import xml.etree.ElementTree as xml
 
 class DBHelper:
@@ -28,7 +28,9 @@ class DBHelper:
     c = self.get_cursor()
     c.execute("""CREATE TABLE imagedata ( \
                     id INTEGER PRIMARY KEY, \
+                    name TEXT, \
                     path TEXT, \
+                    description TEXT, \
                     camera_make TEXT, \
                     camera_model TEXT, \
                     datetime TEXT, \
@@ -50,20 +52,43 @@ class DBHelper:
     c.execute(stmt, values)
     self.commit()
     c.close()
+
+  def populate_from_xml(self, lib_xml_path):
+    # parse the library xml
+    root_path = os.path.dirname(lib_xml_path) + '/'
+    lib_xml = xml.parse(lib_xml_path)
+    image_elements = lib_xml.getroot().findall('image')
+
+    for lmnt in image_elements:
+      data = {}
+      # get the user defined data
+      data['path'] = root_path + lmnt.get('path')
+      data['name'] = lmnt.get('name')
+      data['description'] = lmnt.text
+
+      # get the exif data
+      m = ExifInfo(data['path']).data
+      for k, v in m.items():
+        data[k] = v
+
+      self.insert_from_dict('imagedata', data)
+
+
+def get_lib_xml_path(settings_xml_path):
+  # find the library xml
+  root_path = os.path.dirname(settings_xml_path) + '/'
+  settings_xml = xml.parse(settings_xml_path)
+  lib_xml_path = settings_xml.find('library').get('path')
+  return root_path + lib_xml_path
+
               
 def main(args):
   db_helper = DBHelper('ivl.db')
   db_helper.clear_tables()
   db_helper.create_tables()
-  path = 'guiness_factory_2.JPG'
-  m = ExifInfo(path).data
-  db_helper.insert_from_dict('imagedata', m)
 
-  # find the library
-#  settings_xml_path = '../settings.xml'
-#  settings_xml = xml.parse(settings_xml_path)
-#  lib_xml_path = settings_xml.find('library').get('path')
-#  lib_xml = xml.parse(os.path.dirname(settings_xml_path) + '/' + lib_xml_path)
+  lib_xml_path = get_lib_xml_path('../settings.xml')
+  db_helper.populate_from_xml(lib_xml_path)
 
 
 if __name__ == "__main__":
