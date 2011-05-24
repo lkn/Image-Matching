@@ -53,21 +53,22 @@ class DBHelper:
     self.commit()
     c.close()
 
-  def populate_from_xml(self, lib_xml_path):
+  def populate_from_xml(self, exe_home, lib_dir, xml_name):
     # parse the library xml
-    root_path = os.path.dirname(lib_xml_path) + '/'
-    lib_xml = xml.parse(lib_xml_path)
+    lib_path = os.path.dirname(lib_dir) + '/'  # relative to executable
+    lib_home = exe_home + lib_dir  # relative to self
+    lib_xml = xml.parse(lib_home + xml_name)
     image_elements = lib_xml.getroot().findall('image')
 
     for lmnt in image_elements:
       data = {}
       # get the user defined data
-      data['path'] = root_path + lmnt.get('path')
+      data['path'] = lib_dir + lmnt.get('path')
       data['name'] = lmnt.get('name')
       data['description'] = lmnt.text
 
-      # get the exif data
-      m = ExifInfo(data['path']).data
+      # get the exif data (need to make path relative to this script)
+      m = ExifInfo(exe_home + data['path']).data
       for k, v in m.items():
         data[k] = v
 
@@ -75,11 +76,14 @@ class DBHelper:
 
 
 def get_lib_xml_path(settings_xml_path):
-  """Find the library xml from the settings xml."""
-  root_path = os.path.dirname(settings_xml_path) + '/'
+  """Find the library xml from the settings xml.
+     exe_home is the project root path.
+  """
+  exe_home = os.path.dirname(settings_xml_path) + '/'
   settings_xml = xml.parse(settings_xml_path)
   lib_xml_path = settings_xml.find('library').get('path')
-  return root_path + lib_xml_path
+  (lib_dir, xml_name) = os.path.split(lib_xml_path)
+  return (exe_home, lib_dir + '/', xml_name)
 
               
 def main(args):
@@ -87,8 +91,8 @@ def main(args):
   db_helper.clear_tables()
   db_helper.create_tables()
 
-  lib_xml_path = get_lib_xml_path('../settings.xml')
-  db_helper.populate_from_xml(lib_xml_path)
+  (exe_home, lib_xml_dir, lib_xml_name) = get_lib_xml_path('../settings.xml')
+  db_helper.populate_from_xml(exe_home, lib_xml_dir, lib_xml_name)
 
 
 if __name__ == "__main__":
